@@ -1,0 +1,25 @@
+$('.tm-gate').remove();
+
+var i = 1, status = 0;
+var totalHeight = document.documentElement.scrollHeight;
+
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+function scrollpage() {		
+  function f() 
+	{
+		window.scrollTo(0,i);
+		if(status == 0) {
+   			i += 40;
+		} 
+     else{
+			i -= 40; 
+		}
+
+	setTimeout( f, 1000 );
+	}f();
+}
+
+scrollpage();
